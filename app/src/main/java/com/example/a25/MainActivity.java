@@ -25,10 +25,10 @@ public class MainActivity extends AppCompatActivity {
 //                 startActivity(intent);
 //             }
 //         });
-
-    }
-
-}
+//
+//    }
+//
+//}
 
         gameview = new GameView(this);
         setContentView(gameview);

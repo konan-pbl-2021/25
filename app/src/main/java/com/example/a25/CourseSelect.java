@@ -8,7 +8,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-public class MainActivity extends AppCompatActivity {
+public class CourseSelect extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
         course1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this,Course1.class);
+                Intent intent = new Intent(CourseSelect.this,Course1.class);
                 startActivity(intent);
 
             }
@@ -44,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
         course2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this,Course2.class);
+                Intent intent = new Intent(CourseSelect.this,Course2.class);
                 startActivity(intent);
 
             }
@@ -56,7 +56,7 @@ public class MainActivity extends AppCompatActivity {
         course3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this,Course3.class);
+                Intent intent = new Intent(CourseSelect.this,Course3.class);
                 startActivity(intent);
 
             }
