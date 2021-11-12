@@ -4,13 +4,11 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-public class MainActivity extends AppCompatActivity {
-    GameView gameview = null;
+public class Course2 extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        gameview = new GameView(this);
-        setContentView(gameview);
+        setContentView(R.layout.activity_course2);
     }
 }
