@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+
 import android.view.SurfaceView;
 import android.view.View;
 import android.widget.Button;
@@ -13,6 +14,8 @@ import java.util.Timer;
 import java.util.TimerTask;
 
 import static com.example.a25.GameView2.timerCount;
+import android.view.View;
+import android.widget.Button;
 
 public class FirstActivity extends AppCompatActivity {
     public GameView2 gameview2 = null;
@@ -29,6 +32,7 @@ public class FirstActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_first);
+
         SurfaceView surfaceView = (SurfaceView)findViewById(R.id.SurfaceViewMain);
         gameview2 = new GameView2(this, surfaceView);
 
