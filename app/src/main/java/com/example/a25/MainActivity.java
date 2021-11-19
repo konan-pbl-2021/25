@@ -17,6 +17,7 @@ public class MainActivity extends AppCompatActivity {
         gameview = new GameView(this);
         setContentView(gameview);
       
+
          setContentView(R.layout.activity_main);
 
          Button nextButton = (Button)findViewById(R.id.button2);
@@ -30,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
              }
          });
 
-
-
     }
-}
+   }
+
+   
