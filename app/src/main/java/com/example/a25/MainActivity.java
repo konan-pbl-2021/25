@@ -17,15 +17,17 @@ public class MainActivity extends AppCompatActivity {
         gameview = new GameView(this);
         setContentView(gameview);
       
-      
-        setContentView(R.layout.activity_main);
+
+         setContentView(R.layout.activity_main);
 
          Button nextButton = (Button)findViewById(R.id.button2);
          nextButton.setOnClickListener(new View.OnClickListener() {
-                     @Override
+            @Override
              public void onClick(View v) {
                  Intent intent = new Intent(MainActivity.this, FirstActivity.class);
                  startActivity(intent);
+
+
              }
          });
 
