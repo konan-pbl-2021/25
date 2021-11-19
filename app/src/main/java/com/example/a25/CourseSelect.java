@@ -1,4 +1,4 @@
-package com.example.a25;
+/*package com.example.a25;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -15,7 +15,7 @@ public class CourseSelect extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        /*
+
         Button course1;
         course1=(Button)findViewById(R.id.button);
         course1.setOnClickListener(new View.OnClickListener() {
@@ -26,7 +26,7 @@ public class CourseSelect extends AppCompatActivity {
 
             }
         });
-        */
+
         //コース１へ
         Button course1=(Button)findViewById(R.id.course1);
         course1.setOnClickListener(new View.OnClickListener() {
@@ -65,3 +65,4 @@ public class CourseSelect extends AppCompatActivity {
         course3.setRotation(15f);
     }
 }
+        */
