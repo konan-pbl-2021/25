@@ -12,9 +12,6 @@
 
         <activity android:name=".FirstActivity"></activity>
         <activity android:name=".CourseSelect"></activity>
-        <!activity android:name=".Course3" />
-        <!activity android:name=".Course2" />
-        <!activity android:name=".Course1" />
 
         <activity android:name=".MainActivity">
             <intent-filter>
