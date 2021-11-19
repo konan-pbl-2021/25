@@ -5,10 +5,17 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.view.animation.AlphaAnimation;
+import android.view.animation.Animation;
 import android.widget.Button;
+import android.widget.TextView;
+
+import static android.view.animation.Animation.*;
 
 public class MainActivity extends AppCompatActivity {
     GameView gameview = null;
+    private TextView txtView;
+    private long offset;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -16,9 +23,9 @@ public class MainActivity extends AppCompatActivity {
 
         gameview = new GameView(this);
         setContentView(gameview);
-      
 
          setContentView(R.layout.activity_main);
+
 
          Button nextButton = (Button)findViewById(R.id.button2);
          nextButton.setOnClickListener(new View.OnClickListener() {
@@ -32,6 +39,7 @@ public class MainActivity extends AppCompatActivity {
          });
 
     }
-   }
+
+}
 
    
