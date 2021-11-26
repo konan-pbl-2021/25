@@ -17,18 +17,12 @@ public class GameOverActivity extends AppCompatActivity {
     private TextView textView;
     Timer timer;
 
-    // Sound
-    private SoundPlayer soundPlayer;
-
     @SuppressLint("WrongViewCast")
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game_over);
 
-        soundPlayer = new SoundPlayer(this);
-
-        soundPlayer.playHitSound();
 
         timer = new Timer();
 
