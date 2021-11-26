@@ -201,6 +201,7 @@ class GameView2 implements SurfaceHolder.Callback {
             if (timerCount2 == 1 || timerCount2 == 3) {
                 paint6.setColor(Color.YELLOW);
             }
+            
         }
         if(timerCount3>11) {
             if (timerCount2 == 5||timerCount2==6) {
