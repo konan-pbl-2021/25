@@ -36,7 +36,7 @@ public class FirstActivity extends AppCompatActivity {
     //追加
     private TextView timerText;
     private SimpleDateFormat dataFormat =
-            new SimpleDateFormat("mm:ss.SSS", Locale.US);
+            new SimpleDateFormat("mm:ss", Locale.US);
 
     Timer timer3;
     //追加
@@ -59,7 +59,7 @@ public class FirstActivity extends AppCompatActivity {
 
         //追加
         // 1分= 60x1000 = 60000 msec
-        long countNumber = 60000;
+        long countNumber = 30000;
         // インターバル msec
         long interval = 10;
         timerText = findViewById(R.id.timer);
@@ -94,12 +94,12 @@ public class FirstActivity extends AppCompatActivity {
                             //終了
                         }
 
-                        if(++timerCount==5) {
+                        if(timerCount%60==0 && timerCount!=0) {
                             timer3.cancel();
                             timer.cancel();
                             Intent intent = new Intent(FirstActivity.this, clear_scene.class);
                             startActivity(intent);
-                        }
+                        }timerCount++;
 
 
                     }
@@ -112,7 +112,7 @@ public class FirstActivity extends AppCompatActivity {
                     {
                         countDown.start();
                     }
-                }, 1000, 61000);
+                }, 1000, 60000);
 
 
 
