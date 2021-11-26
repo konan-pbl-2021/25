@@ -252,6 +252,7 @@ class GameView2 implements SurfaceHolder.Callback {
 
 
 
+
         paint.setStyle(Paint.Style.STROKE);
         paint.setStrokeWidth(5);
 

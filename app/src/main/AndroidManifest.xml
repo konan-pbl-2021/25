@@ -10,11 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
-        <activity android:name=".Gameview2"></activity>
         <activity android:name=".GameOverActivity"></activity>
         <activity android:name=".clear_scene"></activity>
         <activity android:name=".FirstActivity" />
-        <activity android:name=".CourseSelect" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
