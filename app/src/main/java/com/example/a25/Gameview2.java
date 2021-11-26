@@ -18,7 +18,23 @@ class GameView2 implements SurfaceHolder.Callback {
     public int rectX=0;
     public int rectB=125;
     public int rectT=125;
+
+    public int rectY2=0;
+    public int rectX2=0;
+    public int rectB2=125;
+    public int rectT2=125;
+
+    public int rectY3=0;
+    public int rectX3=0;
+    public int rectB3=125;
+    public int rectT3=125;
+
+    public int rectY4=0;
+    public int rectX4=0;
+    public int rectB4=125;
+    public int rectT4=125;
     public static int timerCount2=0;
+    public static int timerCount3=0;
 
     private SurfaceHolder surfaceHolder;
     public GameView2(Context context, SurfaceView sv) {
@@ -34,9 +50,13 @@ class GameView2 implements SurfaceHolder.Callback {
         paint2.setColor(Color.GREEN);
         Paint paint3 = new Paint();
         paint3.setColor(Color.WHITE);
-        if(rectX>224&&rectX<826&&rectY>299&&rectY<901) {
-            paint3.setColor(Color.RED);
-        }
+        Paint paint4 = new Paint();
+        paint4.setColor(Color.WHITE);
+        Paint paint5 = new Paint();
+        paint5.setColor(Color.WHITE);
+        Paint paint6 = new Paint();
+        paint6.setColor(Color.WHITE);
+
 
 
         paint.setStyle(Paint.Style.STROKE);
@@ -58,6 +78,9 @@ class GameView2 implements SurfaceHolder.Callback {
         }
         canvas.drawCircle(ballX, ballY,50, paint2);
         canvas.drawRect(rectX, rectY,rectT, rectB, paint3);
+        canvas.drawRect(rectX2, rectY2,rectT2, rectB2, paint4);
+        canvas.drawRect(rectX3, rectY3,rectT3, rectB3, paint5);
+        canvas.drawRect(rectX4, rectY4,rectT4, rectB4, paint6);
 
         surfaceHolder.unlockCanvasAndPost(canvas);
 
@@ -82,8 +105,60 @@ class GameView2 implements SurfaceHolder.Callback {
         paint2.setColor(Color.GREEN);
         Paint paint3 = new Paint();
         paint3.setColor(Color.WHITE);
-        if(rectX>224&&rectX<826&&rectY>299&&rectY<901) {
+        Paint paint4 = new Paint();
+        paint4.setColor(Color.TRANSPARENT);
+        Paint paint5 = new Paint();
+        paint5.setColor(Color.TRANSPARENT);
+        Paint paint6 = new Paint();
+        paint6.setColor(Color.TRANSPARENT);
+
+        /*if(rectX>224&&rectX<826&&rectY>299&&rectY<901) {
             paint3.setColor(Color.RED);
+        }
+         */
+        if(timerCount2==5||timerCount2==6){
+            paint3.setColor(Color.RED);
+        }
+        if(timerCount2==1||timerCount2==3){
+            paint3.setColor(Color.YELLOW);
+        }
+        if (timerCount2 == 2 || timerCount2 == 4) {
+            paint3.setColor(Color.WHITE);
+        }
+        if(timerCount3>7) {
+            if (timerCount2 == 5||timerCount2==6) {
+                paint4.setColor(Color.RED);
+            }
+            if (timerCount2 == 1 || timerCount2 == 3) {
+                paint4.setColor(Color.YELLOW);
+            }
+            if (timerCount2 == 2 || timerCount2 == 4) {
+                paint4.setColor(Color.WHITE);
+            }
+        }
+
+        if(timerCount3>13) {
+            if (timerCount2 == 5||timerCount2==6) {
+                paint5.setColor(Color.RED);
+            }
+            if (timerCount2 == 2 || timerCount2 == 4) {
+                paint5.setColor(Color.WHITE);
+            }
+            if (timerCount2 == 1 || timerCount2 == 3) {
+                paint5.setColor(Color.YELLOW);
+            }
+        }
+
+        if(timerCount3>18) {
+            if (timerCount2 == 5||timerCount2==6) {
+                paint6.setColor(Color.RED);
+            }
+            if (timerCount2 == 2 || timerCount2 == 4) {
+                paint6.setColor(Color.WHITE);
+            }
+            if (timerCount2 == 1 || timerCount2 == 3) {
+                paint6.setColor(Color.YELLOW);
+            }
         }
 
 
@@ -105,6 +180,9 @@ class GameView2 implements SurfaceHolder.Callback {
             r=350;
             l=225;
         }
+        canvas.drawRect(rectX4, rectY4,rectT4, rectB4, paint6);
+        canvas.drawRect(rectX3, rectY3,rectT3, rectB3, paint5);
+        canvas.drawRect(rectX2, rectY2,rectT2, rectB2, paint4);
         canvas.drawRect(rectX, rectY,rectT, rectB, paint3);
         canvas.drawCircle(ballX, ballY,50, paint2);
 

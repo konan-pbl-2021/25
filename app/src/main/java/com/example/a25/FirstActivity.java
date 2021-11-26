@@ -74,36 +74,132 @@ public class FirstActivity extends AppCompatActivity {
                 {
                     public void run()
                     {
-                        gameview2.rectY=random.nextInt(5);
-                        gameview2.rectX=random.nextInt(5);
+                        if(gameview2.timerCount2==0) {
+                            gameview2.rectY=random.nextInt(5);
+                            gameview2.rectX=random.nextInt(5);
                         gameview2.rectY=gameview2.rectY*125+300;
                         gameview2.rectX=gameview2.rectX*125+225;
                         gameview2.rectT=gameview2.rectX+125;
                         gameview2.rectB=gameview2.rectY+125;
+
+
+                            gameview2.rectY2=random.nextInt(5);
+                            gameview2.rectX2=random.nextInt(5);
+                            gameview2.rectY2=gameview2.rectY2*125+300;
+                            gameview2.rectX2=gameview2.rectX2*125+225;
+                            gameview2.rectT2=gameview2.rectX2+125;
+                            gameview2.rectB2=gameview2.rectY2+125;
+
+                            gameview2.rectY3=random.nextInt(5);
+                            gameview2.rectX3=random.nextInt(5);
+                            gameview2.rectY3=gameview2.rectY3*125+300;
+                            gameview2.rectX3=gameview2.rectX3*125+225;
+                            gameview2.rectT3=gameview2.rectX3+125;
+                            gameview2.rectB3=gameview2.rectY3+125;
+
+                            gameview2.rectY4=random.nextInt(5);
+                            gameview2.rectX4=random.nextInt(5);
+                            gameview2.rectY4=gameview2.rectY4*125+300;
+                            gameview2.rectX4=gameview2.rectX4*125+225;
+                            gameview2.rectT4=gameview2.rectX4+125;
+                            gameview2.rectB4=gameview2.rectY4+125;
+                    }
+                        gameview2.timerCount2++;
                         gameview2.update();
 
+                        if(gameview2.timerCount2==6||gameview2.timerCount2==5) {
 
-                        if(gameview2.rectX<gameview2.ballX&&gameview2.rectX+125>gameview2.ballX&&gameview2.rectY<gameview2.ballY&&gameview2.rectY+125>gameview2.ballY){
-                            timer3.cancel();
-                            timer.cancel();
+                            if (gameview2.rectX < gameview2.ballX && gameview2.rectX + 125 > gameview2.ballX && gameview2.rectY < gameview2.ballY && gameview2.rectY + 125 > gameview2.ballY) {
+                                timer3.cancel();
+                                timer.cancel();
 
-                            //追加
-                            Intent intent = new Intent(FirstActivity.this, GameOverActivity.class);
-                            startActivity(intent);
-                            timerText.setText(dataFormat.format(0));
-                            //終了
+                                gameview2.timerCount2=0;
+                                gameview2.timerCount3=0;
+                                timerCount=0;
+
+                                //追加
+                                Intent intent = new Intent(FirstActivity.this, GameOverActivity.class);
+                                startActivity(intent);
+                                timerText.setText(dataFormat.format(0));
+                                //終了
+                            }
                         }
 
-                        if(timerCount%60==0 && timerCount!=0) {
+                        if((gameview2.timerCount2==5||gameview2.timerCount2==6)&&gameview2.timerCount3>7) {
+
+                            if (gameview2.rectX2 < gameview2.ballX && gameview2.rectX2 + 125 > gameview2.ballX && gameview2.rectY2 < gameview2.ballY && gameview2.rectY2 + 125 > gameview2.ballY) {
+                                timer3.cancel();
+                                timer.cancel();
+
+                                gameview2.timerCount2=0;
+                                gameview2.timerCount3=0;
+                                timerCount=0;
+
+                                //追加
+                                Intent intent = new Intent(FirstActivity.this, GameOverActivity.class);
+                                startActivity(intent);
+                                timerText.setText(dataFormat.format(0));
+                                //終了
+                            }
+                        }
+
+                        if((gameview2.timerCount2==5||gameview2.timerCount2==6)&&gameview2.timerCount3>13) {
+
+                            if (gameview2.rectX3 < gameview2.ballX && gameview2.rectX3 + 125 > gameview2.ballX && gameview2.rectY3 < gameview2.ballY && gameview2.rectY3 + 125 > gameview2.ballY) {
+                                timer3.cancel();
+                                timer.cancel();
+
+                                gameview2.timerCount2=0;
+                                gameview2.timerCount3=0;
+                                timerCount=0;
+
+                                //追加
+                                Intent intent = new Intent(FirstActivity.this, GameOverActivity.class);
+                                startActivity(intent);
+                                timerText.setText(dataFormat.format(0));
+                                //終了
+                            }
+                        }
+                        if((gameview2.timerCount2==5||gameview2.timerCount2==6)&&gameview2.timerCount3>19) {
+
+                            if (gameview2.rectX4 < gameview2.ballX && gameview2.rectX4 + 125 > gameview2.ballX && gameview2.rectY4 < gameview2.ballY && gameview2.rectY4 + 125 > gameview2.ballY) {
+                                timer3.cancel();
+                                timer.cancel();
+
+                                gameview2.timerCount2=0;
+                                gameview2.timerCount3=0;
+                                timerCount=0;
+
+                                //追加
+                                Intent intent = new Intent(FirstActivity.this, GameOverActivity.class);
+                                startActivity(intent);
+                                timerText.setText(dataFormat.format(0));
+                                //終了
+                            }
+                        }
+
+
+
+                        if(gameview2.timerCount2==6) {
+                            gameview2.timerCount2=0;
+                            gameview2.timerCount3++;
+
+                        }
+
+                        if(timerCount%150==0 && timerCount!=0) {
                             timer3.cancel();
                             timer.cancel();
+                            timerCount=0;
+
+                            gameview2.timerCount2=0;
+                            gameview2.timerCount3=0;
                             Intent intent = new Intent(FirstActivity.this, clear_scene.class);
                             startActivity(intent);
                         }timerCount++;
 
 
                     }
-                }, 1000, 500);
+                }, 1000, 200);
 
         timer.scheduleAtFixedRate(
                 new TimerTask()
