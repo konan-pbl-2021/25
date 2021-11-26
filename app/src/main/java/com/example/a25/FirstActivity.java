@@ -103,6 +103,34 @@ public class FirstActivity extends AppCompatActivity {
                             gameview2.rectX4=gameview2.rectX4*125+225;
                             gameview2.rectT4=gameview2.rectX4+125;
                             gameview2.rectB4=gameview2.rectY4+125;
+
+                            gameview2.rectY5=random.nextInt(5);
+                            gameview2.rectX5=random.nextInt(5);
+                            gameview2.rectY5=gameview2.rectY5*125+300;
+                            gameview2.rectX5=gameview2.rectX5*125+225;
+                            gameview2.rectT5=gameview2.rectX5+125;
+                            gameview2.rectB5=gameview2.rectY5+125;
+
+                            gameview2.rectY6=random.nextInt(5);
+                            gameview2.rectX6=random.nextInt(5);
+                            gameview2.rectY6=gameview2.rectY6*125+300;
+                            gameview2.rectX6=gameview2.rectX6*125+225;
+                            gameview2.rectT6=gameview2.rectX6+125;
+                            gameview2.rectB6=gameview2.rectY6+125;
+
+                            gameview2.rectY7=random.nextInt(5);
+                            gameview2.rectX7=random.nextInt(5);
+                            gameview2.rectY7=gameview2.rectY7*125+300;
+                            gameview2.rectX7=gameview2.rectX7*125+225;
+                            gameview2.rectT7=gameview2.rectX7+125;
+                            gameview2.rectB7=gameview2.rectY7+125;
+
+                            gameview2.rectY8=random.nextInt(5);
+                            gameview2.rectX8=random.nextInt(5);
+                            gameview2.rectY8=gameview2.rectY8*125+300;
+                            gameview2.rectX8=gameview2.rectX8*125+225;
+                            gameview2.rectT8=gameview2.rectX8+125;
+                            gameview2.rectB8=gameview2.rectY8+125;
                     }
                         gameview2.timerCount2++;
                         gameview2.update();
@@ -125,7 +153,7 @@ public class FirstActivity extends AppCompatActivity {
                             }
                         }
 
-                        if((gameview2.timerCount2==5||gameview2.timerCount2==6)&&gameview2.timerCount3>7) {
+                        if((gameview2.timerCount2==5||gameview2.timerCount2==6)&&gameview2.timerCount3>3) {
 
                             if (gameview2.rectX2 < gameview2.ballX && gameview2.rectX2 + 125 > gameview2.ballX && gameview2.rectY2 < gameview2.ballY && gameview2.rectY2 + 125 > gameview2.ballY) {
                                 timer3.cancel();
@@ -143,7 +171,7 @@ public class FirstActivity extends AppCompatActivity {
                             }
                         }
 
-                        if((gameview2.timerCount2==5||gameview2.timerCount2==6)&&gameview2.timerCount3>13) {
+                        if((gameview2.timerCount2==5||gameview2.timerCount2==6)&&gameview2.timerCount3>6) {
 
                             if (gameview2.rectX3 < gameview2.ballX && gameview2.rectX3 + 125 > gameview2.ballX && gameview2.rectY3 < gameview2.ballY && gameview2.rectY3 + 125 > gameview2.ballY) {
                                 timer3.cancel();
@@ -160,9 +188,81 @@ public class FirstActivity extends AppCompatActivity {
                                 //終了
                             }
                         }
-                        if((gameview2.timerCount2==5||gameview2.timerCount2==6)&&gameview2.timerCount3>19) {
+                        if((gameview2.timerCount2==5||gameview2.timerCount2==6)&&gameview2.timerCount3>9) {
 
                             if (gameview2.rectX4 < gameview2.ballX && gameview2.rectX4 + 125 > gameview2.ballX && gameview2.rectY4 < gameview2.ballY && gameview2.rectY4 + 125 > gameview2.ballY) {
+                                timer3.cancel();
+                                timer.cancel();
+
+                                gameview2.timerCount2=0;
+                                gameview2.timerCount3=0;
+                                timerCount=0;
+
+                                //追加
+                                Intent intent = new Intent(FirstActivity.this, GameOverActivity.class);
+                                startActivity(intent);
+                                timerText.setText(dataFormat.format(0));
+                                //終了
+                            }
+                        }
+
+                        if((gameview2.timerCount2==5||gameview2.timerCount2==6)&&gameview2.timerCount3>11) {
+
+                            if (gameview2.rectX5 < gameview2.ballX && gameview2.rectX5 + 125 > gameview2.ballX && gameview2.rectY5 < gameview2.ballY && gameview2.rectY5 + 125 > gameview2.ballY) {
+                                timer3.cancel();
+                                timer.cancel();
+
+                                gameview2.timerCount2=0;
+                                gameview2.timerCount3=0;
+                                timerCount=0;
+
+                                //追加
+                                Intent intent = new Intent(FirstActivity.this, GameOverActivity.class);
+                                startActivity(intent);
+                                timerText.setText(dataFormat.format(0));
+                                //終了
+                            }
+                        }
+
+                        if((gameview2.timerCount2==5||gameview2.timerCount2==6)&&gameview2.timerCount3>14) {
+
+                            if (gameview2.rectX6 < gameview2.ballX && gameview2.rectX6 + 125 > gameview2.ballX && gameview2.rectY6 < gameview2.ballY && gameview2.rectY6 + 125 > gameview2.ballY) {
+                                timer3.cancel();
+                                timer.cancel();
+
+                                gameview2.timerCount2=0;
+                                gameview2.timerCount3=0;
+                                timerCount=0;
+
+                                //追加
+                                Intent intent = new Intent(FirstActivity.this, GameOverActivity.class);
+                                startActivity(intent);
+                                timerText.setText(dataFormat.format(0));
+                                //終了
+                            }
+                        }
+
+                        if((gameview2.timerCount2==5||gameview2.timerCount2==6)&&gameview2.timerCount3>17) {
+
+                            if (gameview2.rectX7 < gameview2.ballX && gameview2.rectX7 + 125 > gameview2.ballX && gameview2.rectY7 < gameview2.ballY && gameview2.rectY7 + 125 > gameview2.ballY) {
+                                timer3.cancel();
+                                timer.cancel();
+
+                                gameview2.timerCount2=0;
+                                gameview2.timerCount3=0;
+                                timerCount=0;
+
+                                //追加
+                                Intent intent = new Intent(FirstActivity.this, GameOverActivity.class);
+                                startActivity(intent);
+                                timerText.setText(dataFormat.format(0));
+                                //終了
+                            }
+                        }
+
+                        if((gameview2.timerCount2==5||gameview2.timerCount2==6)&&gameview2.timerCount3>17) {
+
+                            if (gameview2.rectX8 < gameview2.ballX && gameview2.rectX8 + 125 > gameview2.ballX && gameview2.rectY8 < gameview2.ballY && gameview2.rectY8 + 125 > gameview2.ballY) {
                                 timer3.cancel();
                                 timer.cancel();
 
