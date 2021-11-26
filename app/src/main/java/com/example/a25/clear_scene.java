@@ -18,17 +18,11 @@ public class clear_scene extends AppCompatActivity {
     private TextView textView;
     Timer timer;
 
-    // Sound
-    private SoundPlayer soundPlayer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_clear_scene);
-
-        soundPlayer = new SoundPlayer(this);
-
-        soundPlayer.playOverSound();
 
         timer = new Timer();
 
