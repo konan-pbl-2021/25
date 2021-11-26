@@ -18,6 +18,8 @@ public class MainActivity extends AppCompatActivity {
     private TextView txtView;
     private long offset;
 
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
