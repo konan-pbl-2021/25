@@ -17,6 +17,15 @@ import static com.example.a25.GameView2.timerCount;
 import android.view.View;
 import android.widget.Button;
 
+import android.os.CountDownTimer;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.TextView;
+
+import java.text.SimpleDateFormat;
+import java.util.Locale;
+
 public class FirstActivity extends AppCompatActivity {
     public GameView2 gameview2 = null;
 
@@ -24,8 +33,13 @@ public class FirstActivity extends AppCompatActivity {
     Timer timer2;
     Random random=new Random();
 
+    //追加
+    private TextView timerText;
+    private SimpleDateFormat dataFormat =
+            new SimpleDateFormat("mm:ss.SSS", Locale.US);
 
-
+    Timer timer3;
+    //追加
 
 
     @Override
@@ -38,8 +52,24 @@ public class FirstActivity extends AppCompatActivity {
 
         timer = new Timer();
         timer2 = new Timer();
+        timer3 = new Timer();
 
-        timer.scheduleAtFixedRate(
+
+
+
+        //追加
+        // 1分= 60x1000 = 60000 msec
+        long countNumber = 60000;
+        // インターバル msec
+        long interval = 10;
+        timerText = findViewById(R.id.timer);
+        timerText.setText(dataFormat.format(0));
+        // インスタンス生成
+        // CountDownTimer(long millisInFuture, long countDownInterval)
+        final CountDown countDown = new CountDown(countNumber, interval);
+        //終了
+
+        timer3.scheduleAtFixedRate(
                 new TimerTask()
                 {
                     public void run()
@@ -51,17 +81,39 @@ public class FirstActivity extends AppCompatActivity {
                         gameview2.rectT=gameview2.rectX+125;
                         gameview2.rectB=gameview2.rectY+125;
                         gameview2.update();
+
+
                         if(gameview2.rectX<gameview2.ballX&&gameview2.rectX+125>gameview2.ballX&&gameview2.rectY<gameview2.ballY&&gameview2.rectY+125>gameview2.ballY){
+                            timer3.cancel();
                             timer.cancel();
+
+                            //追加
+                            Intent intent = new Intent(FirstActivity.this, GameOverActivity.class);
+                            startActivity(intent);
+                            timerText.setText(dataFormat.format(0));
+                            //終了
                         }
 
-                        if(timerCount==2) {
+                        if(++timerCount==5) {
+                            timer3.cancel();
                             timer.cancel();
+                            Intent intent = new Intent(FirstActivity.this, clear_scene.class);
+                            startActivity(intent);
                         }
 
 
                     }
                 }, 1000, 500);
+
+        timer.scheduleAtFixedRate(
+                new TimerTask()
+                {
+                    public void run()
+                    {
+                        countDown.start();
+                    }
+                }, 1000, 61000);
+
 
 
         Button upButton = (Button)findViewById(R.id.up);
@@ -108,6 +160,35 @@ public class FirstActivity extends AppCompatActivity {
             }
         });
 
-
     }
+
+
+
+    //追加
+    class CountDown extends CountDownTimer {
+
+        CountDown(long millisInFuture, long countDownInterval) {
+            super(millisInFuture, countDownInterval);
+        }
+
+        @Override
+        public void onFinish() {
+            // 完了
+            timerText.setText(dataFormat.format(0));
+        }
+
+        // インターバルで呼ばれる
+        @Override
+        public void onTick(long millisUntilFinished) {
+            // 残り時間を分、秒、ミリ秒に分割
+            //long mm = millisUntilFinished / 1000 / 60;
+            //long ss = millisUntilFinished / 1000 % 60;
+            //long ms = millisUntilFinished - ss * 1000 - mm * 1000 * 60;
+            //timerText.setText(String.format("%1$02d:%2$02d.%3$03d", mm, ss, ms));
+
+            timerText.setText(dataFormat.format(millisUntilFinished));
+
+        }
+    }
+    //終了
 }
